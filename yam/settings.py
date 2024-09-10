@@ -77,7 +77,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'yam.wsgi.application'
 
 CRONJOBS = [
-    ('0 6 * * *', 'chart.cron.my_func')
+    ('0 6 * * *', 'chart.cron.collect_chart')
 ]
 
 # Database
