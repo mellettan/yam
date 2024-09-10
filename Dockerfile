@@ -24,4 +24,4 @@ RUN poetry install --no-root
 COPY . /app/
 
 # Выполняем миграции, добавляем CRON задачи и запускаем приложение
-CMD ["bash", "-c", "python manage.py migrate && cron && python manage.py crontab add && python manage.py runserver 0.0.0.0:8000"]
+CMD ["bash", "-c", "python manage.py migrate && python manage.py collectstatic --noinput && cron && python manage.py crontab add && python manage.py runserver 0.0.0.0:8000"]
